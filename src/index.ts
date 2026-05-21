@@ -1,7 +1,7 @@
 /**
  * @agent-remote/sdk
  *
- * TypeScript client for agent-remote-daemon. Read structured
+ * TypeScript client for agent-remote-core. Read structured
  * ClaudeWindow snapshots from a daemon, send input over its Unix
  * socket, and manage daemon lifecycle.
  *

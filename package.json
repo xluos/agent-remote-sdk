@@ -1,7 +1,7 @@
 {
   "name": "@agent-remote/sdk",
   "version": "0.1.0",
-  "description": "TypeScript SDK for agent-remote-daemon: read structured terminal snapshots and send input over Unix socket.",
+  "description": "TypeScript SDK for agent-remote-core: read structured terminal snapshots and send input over Unix socket.",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

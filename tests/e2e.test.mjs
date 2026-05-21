@@ -1,7 +1,7 @@
 /**
  * End-to-end smoke test:
  *   1. Start a tmux session running a fake "AI agent" loop
- *   2. Spawn agent-remote-daemon in mirror mode
+ *   2. Spawn agent-remote-core in mirror mode
  *   3. Use the SDK to verify SessionReader sees the ClaudeWindow snapshot
  *      and SessionWriter can inject text via tmux send-keys
  *
@@ -25,12 +25,12 @@ async function cleanup() {
     execFileSync("tmux", ["kill-session", "-t", tmuxName], { stdio: "ignore" });
   } catch {}
   try {
-    execFileSync("agent-remote-daemon", ["kill", daemonName], { stdio: "ignore" });
+    execFileSync("agent-remote-core", ["kill", daemonName], { stdio: "ignore" });
   } catch {}
 }
 
 async function main() {
-  console.log("=== E2E: agent-remote-daemon + @agent-remote/sdk ===\n");
+  console.log("=== E2E: agent-remote-core + @agent-remote/sdk ===\n");
 
   // 0. 写一个假 spinner 程序模拟 CLI 输出
   const scriptPath = join(mkdtempSync(join(tmpdir(), "csremote-e2e-")), "agent.py");

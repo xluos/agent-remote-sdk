@@ -1,6 +1,6 @@
 # @agent-remote/sdk
 
-TypeScript client for [`agent-remote-daemon`](https://github.com/xluos/agent-remote-daemon) — read structured snapshots of a Claude Code / Codex CLI terminal session, send input over a Unix socket, and manage the daemon's lifecycle.
+TypeScript client for [`agent-remote-core`](https://github.com/xluos/agent-remote-core) — read structured snapshots of a Claude Code / Codex CLI terminal session, send input over a Unix socket, and manage the daemon's lifecycle.
 
 ## What this is for
 
@@ -20,8 +20,8 @@ bun add @agent-remote/sdk
 
 Also requires the daemon binary on PATH:
 ```bash
-pip install agent-remote-daemon
-# or: uv tool install agent-remote-daemon
+pip install agent-remote-core
+# or: uv tool install agent-remote-core
 ```
 
 ## Quick start
@@ -99,7 +99,7 @@ await sm.kill("mywork");
 
 ## Protocol
 
-The daemon publishes `ClaudeWindow` JSON snapshots over a 200 MB mmap file (`/tmp/remote-claude/<name>.mq`); input is sent over a Unix socket (`<name>.sock`). The wire format is plain JSON, so anyone can implement a reader in another language — see [`agent-remote-daemon/shared_state.py`](https://github.com/xluos/agent-remote-daemon/blob/main/src/agent_remote_daemon/server/shared_state.py) for the binary header layout.
+The daemon publishes `ClaudeWindow` JSON snapshots over a 200 MB mmap file (`/tmp/remote-claude/<name>.mq`); input is sent over a Unix socket (`<name>.sock`). The wire format is plain JSON, so anyone can implement a reader in another language — see [`agent-remote-core/shared_state.py`](https://github.com/xluos/agent-remote-core/blob/main/src/agent_remote_daemon/server/shared_state.py) for the binary header layout.
 
 ## License
 

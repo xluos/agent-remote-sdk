@@ -1,9 +1,9 @@
 /**
- * SessionManager — spawn / list / kill agent-remote-daemon processes.
+ * SessionManager — spawn / list / kill agent-remote-core processes.
  *
- * Thin wrapper around the `agent-remote-daemon` CLI. The daemon binary
- * must be on PATH (install with `uv tool install agent-remote-daemon`
- * or `pip install agent-remote-daemon`).
+ * Thin wrapper around the `agent-remote-core` CLI. The daemon binary
+ * must be on PATH (install with `uv tool install agent-remote-core`
+ * or `pip install agent-remote-core`).
  */
 
 import { spawn, execFile, type ChildProcess } from "node:child_process";
@@ -22,7 +22,7 @@ export interface StartOptions {
   env?: NodeJS.ProcessEnv;
   /** Args forwarded to the inner CLI (e.g. ["--model", "claude-opus-4-7"]). */
   cliArgs?: string[];
-  /** Override the daemon binary name. Default "agent-remote-daemon". */
+  /** Override the daemon binary name. Default "agent-remote-core". */
   daemonBin?: string;
   /** Detach the daemon so it survives this process. Default true. */
   detached?: boolean;
@@ -49,7 +49,7 @@ export class SessionManager {
   private readonly daemonBin: string;
 
   constructor(opts?: { daemonBin?: string }) {
-    this.daemonBin = opts?.daemonBin ?? "agent-remote-daemon";
+    this.daemonBin = opts?.daemonBin ?? "agent-remote-core";
   }
 
   /** Start a fresh PTY-backed session. Returns once the socket exists. */
