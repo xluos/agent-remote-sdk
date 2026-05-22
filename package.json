@@ -1,7 +1,7 @@
 {
-  "name": "@agent-remote/sdk",
+  "name": "@agents-remote/sdk",
   "version": "0.1.0",
-  "description": "TypeScript SDK for agent-remote-core: read structured terminal snapshots and send input over Unix socket.",
+  "description": "TypeScript SDK for agents-remote-core: read structured terminal snapshots and send input over Unix socket.",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -30,9 +30,9 @@
   "author": "xluos",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xluos/agent-remote-sdk.git"
+    "url": "git+https://github.com/xluos/agents-remote-sdk.git"
   },
-  "homepage": "https://github.com/xluos/agent-remote-sdk#readme",
+  "homepage": "https://github.com/xluos/agents-remote-sdk#readme",
   "devDependencies": {
     "typescript": "^5.6.0",
     "@types/node": "^22.0.0"

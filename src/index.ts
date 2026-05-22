@@ -1,14 +1,14 @@
 /**
- * @agent-remote/sdk
+ * @agents-remote/sdk
  *
- * TypeScript client for agent-remote-core. Read structured
+ * TypeScript client for agents-remote-core. Read structured
  * ClaudeWindow snapshots from a daemon, send input over its Unix
  * socket, and manage daemon lifecycle.
  *
  * Example:
  *
  * ```ts
- * import { SessionManager, SessionReader, SessionWriter } from "@agent-remote/sdk";
+ * import { SessionManager, SessionReader, SessionWriter } from "@agents-remote/sdk";
  *
  * const sm = new SessionManager();
  * await sm.mirror("claudesquad_abc123");

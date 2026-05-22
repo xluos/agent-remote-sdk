@@ -1,9 +1,9 @@
 /**
- * SessionManager — spawn / list / kill agent-remote-core processes.
+ * SessionManager — spawn / list / kill agents-remote-core processes.
  *
- * Thin wrapper around the `agent-remote-core` CLI. The daemon binary
- * must be on PATH (install with `uv tool install agent-remote-core`
- * or `pip install agent-remote-core`).
+ * Thin wrapper around the `agents-remote-core` CLI. The daemon binary
+ * must be on PATH (install with `uv tool install agents-remote-core`
+ * or `pip install agents-remote-core`).
  */
 
 import { spawn, execFile, type ChildProcess } from "node:child_process";
@@ -22,7 +22,7 @@ export interface StartOptions {
   env?: NodeJS.ProcessEnv;
   /** Args forwarded to the inner CLI (e.g. ["--model", "claude-opus-4-7"]). */
   cliArgs?: string[];
-  /** Override the daemon binary name. Default "agent-remote-core". */
+  /** Override the daemon binary name. Default "agents-remote-core". */
   daemonBin?: string;
   /** Detach the daemon so it survives this process. Default true. */
   detached?: boolean;
@@ -50,7 +50,7 @@ export class SessionManager {
   private readonly dataDir?: string;
 
   constructor(opts?: { daemonBin?: string; dataDir?: string }) {
-    this.daemonBin = opts?.daemonBin ?? "agent-remote-core";
+    this.daemonBin = opts?.daemonBin ?? "agents-remote-core";
     this.dataDir = opts?.dataDir;
   }
 

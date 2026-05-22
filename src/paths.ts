@@ -8,10 +8,10 @@
  * Namespace isolation: every path helper accepts an optional `dataDir`
  * so apps embedding the SDK (agentara, third-party TUIs) can keep
  * their sessions out of the default `/tmp/remote-claude/` directory
- * that agent-remote's own Feishu bridge scans.
+ * that agents-remote's own Feishu bridge scans.
  *
  * Resolution order matches the daemon CLI:
- *   explicit dataDir arg  >  AGENT_REMOTE_CORE_DATA_DIR env  >  default
+ *   explicit dataDir arg  >  AGENTS_REMOTE_CORE_DATA_DIR env  >  default
  */
 
 import { createHash } from "node:crypto";
@@ -23,7 +23,7 @@ const DEFAULT_SOCKET_DIR = "/tmp/remote-claude";
 /** Resolve the runtime directory the daemon writes to. */
 export function resolveDataDir(dataDir?: string): string {
   if (dataDir) return dataDir;
-  return process.env.AGENT_REMOTE_CORE_DATA_DIR ?? DEFAULT_SOCKET_DIR;
+  return process.env.AGENTS_REMOTE_CORE_DATA_DIR ?? DEFAULT_SOCKET_DIR;
 }
 
 /** Where the daemon places per-session socket / pid / mq files (default). */
